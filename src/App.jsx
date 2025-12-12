@@ -8,9 +8,9 @@ export const App = () => {
   let visibleMovies = moviesFromServer;
 
   if (query) {
-    visibleMovies = moviesFromServer.filter(movie => {
-      const trimmedQuery = query.trim().toLowerCase();
+    const trimmedQuery = query.trim().toLowerCase();
 
+    visibleMovies = moviesFromServer.filter(movie => {
       return (
         movie.title.toLowerCase().includes(trimmedQuery) ||
         movie.description.toLowerCase().includes(trimmedQuery)
